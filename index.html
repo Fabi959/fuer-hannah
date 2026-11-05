@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Für Hannah ❤️</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, serif;
+  text-align: center;
+  color: #a63f70;
+  background: linear-gradient(
+    135deg,
+    #ffe1ed,
+    #fff7fa,
+    #f8d0e2,
+    #ffeaf2
+  );
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 55px 22px 80px;
+  position: relative;
+  z-index: 2;
+}
+
+h1 {
+  font-size: 40px;
+  animation: heartbeat 2s infinite;
+}
+
+h2 {
+  color: #d45d91;
+}
+
+p {
+  font-size: 19px;
+  line-height: 1.8;
+}
+
+.subtitle {
+  font-size: 17px;
+  color: #bd7191;
+}
+
+.garden {
+  margin: 35px 0;
+  min-height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.tulip {
+  font-size: 55px;
+  animation: bloom 3s ease-in-out infinite alternate;
+}
+
+.tulip:nth-child(2) {
+  animation-delay: .5s;
+}
+
+.tulip:nth-child(3) {
+  animation-delay: 1s;
+}
+
+@keyframes bloom {
+  from { transform: translateY(12px) scale(.8); }
+  to { transform: translateY(-8px) scale(1.15); }
+}
+
+button {
+  background: linear-gradient(135deg,#ed82aa,#d6538a);
+  color: white;
+  border: none;
+  padding: 17px 27px;
+  border-radius: 35px;
+  font-size: 17px;
+  cursor: pointer;
+  box-shadow: 0 7px 20px #d6538a55;
+  transition: transform .3s;
+}
+
+button:hover {
+  transform: scale(1.06);
+}
+
+#letter {
+  display: none;
+  background: rgba(255,255,255,.85);
+  border: 1px solid #f4c5d9;
+  border-radius: 25px;
+  padding: 25px;
+  margin-top: 30px;
+  box-shadow: 0 10px 30px #d98aaa33;
+  animation: appear 1s ease;
+}
+
+.big-heart {
+  font-size: 55px;
+  animation: heartbeat 1.5s infinite;
+}
+
+.flower {
+  position: fixed;
+  bottom: -70px;
+  pointer-events: none;
+  z-index: 1;
+  animation: floatUp 8s linear forwards;
+}
+
+@keyframes heartbeat {
+  50% { transform: scale(1.07); }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  20% { opacity: 1; }
+  100% {
+    transform: translateY(-115vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.footer {
+  margin-top: 45px;
+  font-size: 15px;
+  color: #c47a9c;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Für Hannah ❤️</h1>
+
+  <p class="subtitle">
+    Eine kleine Überraschung, nur für dich ...
+  </p>
+
+  <div class="garden">
+    <span class="tulip">🌷</span>
+    <span class="tulip">💐</span>
+    <span class="tulip">🌷</span>
+  </div>
+
+  <h2>Du bist etwas Besonderes 🤍</h2>
+
+  <p>
+    Ich wollte dir etwas schenken,
+    das von Herzen kommt.
+    Auch wenn es nur eine kleine Webseite ist,
+    steckt ganz viel Gefühl darin.
+  </p>
+
+  <p>Für dich, Hannah. 🌸</p>
+
+  <button onclick="openLetter()">
+    Öffne deinen Brief 💌
+  </button>
+
+  <div id="letter">
+
+    <div class="big-heart">❤️</div>
+
+    <h2>Es tut mir leid, Hannah.</h2>
+
+    <p>
+      Ich weiß, dass ich Fehler gemacht habe.
+      Und ich möchte mich ehrlich bei dir entschuldigen.
+    </p>
+
+    <p>
+      Du bist mir unglaublich wichtig.
+      Ich möchte nicht nur schöne Worte sagen,
+      sondern dir auch durch meine Taten zeigen,
+      dass du mir etwas bedeutest.
+    </p>
+
+    <p>
+      Ich kann die Vergangenheit nicht ändern,
+      aber ich kann versuchen, es in Zukunft besser zu machen.
+    </p>
+
+    <h2>Du bedeutest mir so viel. ❤️</h2>
+
+    <div style="font-size:45px">
+      🌷 🤍 🌸 🪷 🌷
+    </div>
+
+    <p>
+      Von Herzen, nur für dich.
+    </p>
+
+    <p><strong>❤️ Hannah ❤️</strong></p>
+
+  </div>
+
+  <div class="footer">
+    Mit ganz viel Liebe vorbereitet 🌷
+  </div>
+
+</div>
+
+<script>
+
+function openLetter() {
+  document.getElementById("letter").style.display = "block";
+}
+
+const flowers = [
+  "🌷",
+  "🌸",
+  "💕",
+  "🤍",
+  "🪷",
+  "💗"
+];
+
+function createFlower() {
+
+  const flower = document.createElement("div");
+
+  flower.className = "flower";
+
+  flower.innerText =
+    flowers[Math.floor(Math.random() * flowers.length)];
+
+  flower.style.left = Math.random() * 100 + "vw";
+
+  flower.style.fontSize =
+    (20 + Math.random() * 25) + "px";
+
+  flower.style.animationDuration =
+    (6 + Math.random() * 5) + "s";
+
+  document.body.appendChild(flower);
+
+  setTimeout(() => {
+    flower.remove();
+  }, 11000);
+}
+
+setInterval(createFlower, 650);
+
+</script>
+
+</body>
+</html>
